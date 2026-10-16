@@ -39,6 +39,12 @@ The weekends carry the plan. If they shrink, the target drops toward A2.
 | Anki | Daily vocabulary, about 7 new words a day | https://apps.ankiweb.net |
 | Easy German (YouTube) | Real spoken German, from A2 | https://www.youtube.com/@EasyGerman |
 
+All materials are free. No books to buy.
+
+Two paid books were recommended: *Grammatik aktiv A1–B1* (Cornelsen) and *Deutsch intensiv Wortschatz* (Klett). Claude doesn't use their content, but the exercises copy their approach:
+- **Grammar** works like Grammatik aktiv: one topic per unit, a short explanation, then exercises.
+- **Vocabulary** works like Wortschatz intensiv: words grouped by theme and practised in sentences, not as bare lists.
+
 ## How it is taught
 
 Claude teaches. No apps besides Anki.
