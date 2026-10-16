@@ -131,6 +131,6 @@ The README shows a panel with one bar per skill: Lesen, Hören, Schreiben, Sprec
 - Sprechen comes from the Sunday voice chats, where Claude scores each one.
 
 **Updating:**
-- Claude updates `progress.json` when checking exercises, at least every Sunday.
+- Claude logs each exercise's skill scores in `LOG.md` when checking.
 - Then Claude runs `python3 tools/progress.py` to redraw `progress.svg`. Never edit the SVG by hand.
 - After a passed level exam, Claude records it in `progress.json` and the bars switch to the next level.

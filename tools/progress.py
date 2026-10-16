@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
-"""Draw progress.svg (the panel at the top of the README) from progress.json.
+"""Draw progress.svg (the panel at the top of the README).
 
-progress.json holds, for each skill and level, a percentage toward that
-level's exam (0-100), plus the level exams passed so far. See CURRICULUM.md,
-section "Progress", for how the percentages are set.
+Reads:
+  progress.json   start/goal dates, Anki count, passed level exams
+  LOG.md          skill scores per exercise
+  topics/*.md     the topic IDs of each level
+
+Each skill's bar for the current level (CURRICULUM.md, section "Progress"):
+  50 x coverage  (share of the level's topics practised in that skill)
++ 50 x min(average score in that skill over the last 28 days / 80, 1)
 
 Usage: python3 tools/progress.py [--today YYYY-MM-DD]
 """
@@ -11,6 +16,7 @@ import datetime as dt
 import html
 import json
 import pathlib
+import re
 import sys
 
 REPO = pathlib.Path(__file__).resolve().parent.parent
@@ -22,6 +28,52 @@ SKILLS = [
     ("Schreiben", "Writing", "#1baf7a", "#199e70"),
     ("Sprechen", "Speaking", "#eda100", "#c98500"),
 ]
+TOPIC_LINE = re.compile(r"^- \*\*((?:A1|A2|B1)-[GW]\d{2})\*\*")
+ID_RE = re.compile(r"(?:A1|A2|B1)-[GW]\d{2}")
+WINDOW_DAYS = 28
+TARGET_SCORE = 80
+
+
+def parse_topics():
+    topics = {}
+    for lv in LEVELS:
+        path = REPO / "topics" / f"{lv}.md"
+        lines = path.read_text(encoding="utf-8").splitlines() if path.exists() else []
+        topics[lv] = [m.group(1) for m in map(TOPIC_LINE.match, lines) if m]
+    return topics
+
+
+def parse_log():
+    """Rows of LOG.md: | Date | Day | Topics | Exercise | Lesen | Hören | Schreiben | Sprechen | Status |"""
+    rows = []
+    path = REPO / "LOG.md"
+    for line in path.read_text(encoding="utf-8").splitlines() if path.exists() else []:
+        if not re.match(r"^\|\s*\d{4}-\d{2}-\d{2}", line):
+            continue
+        cells = [c.strip() for c in line.strip().strip("|").split("|")]
+        cells += [""] * (9 - len(cells))
+        scores = {}
+        for (key, *_), cell in zip(SKILLS, cells[4:8]):
+            m = re.match(r"^\d+(?:\.\d+)?", cell)
+            scores[key] = float(m.group(0)) if m else None
+        rows.append({"date": dt.date.fromisoformat(cells[0]), "topics": ID_RE.findall(cells[2]),
+                     "scores": scores})
+    return rows
+
+
+def skill_bars(level, topics, rows, today):
+    ids = set(topics.get(level, []))
+    bars = {}
+    for key, *_ in SKILLS:
+        if not ids:
+            bars[key] = 0
+            continue
+        mine = [r for r in rows if r["scores"][key] is not None and ids & set(r["topics"])]
+        covered = {t for r in mine for t in r["topics"] if t in ids}
+        recent = [r["scores"][key] for r in mine if 0 <= (today - r["date"]).days < WINDOW_DAYS]
+        accuracy = min(sum(recent) / len(recent) / TARGET_SCORE, 1) if recent else 0
+        bars[key] = 50 * len(covered) / len(ids) + 50 * accuracy
+    return bars
 
 
 def tint(hex_color, amount, base="#fcfcfb"):
@@ -38,7 +90,7 @@ def plural(n, word):
     return word if n == 1 else word + "s"
 
 
-def build_svg(data, today):
+def build_svg(data, bars, today):
     W, pad = 880, 24
     start = dt.date.fromisoformat(data["start"])
     goal = dt.date.fromisoformat(data["goal"])
@@ -100,8 +152,7 @@ def build_svg(data, today):
     bw = W - 2 * pad
     for i, (key, label, _, _) in enumerate(SKILLS):
         y = top_rows + i * row_h
-        vals = data["skills"][key]
-        pct = max(0, min(100, vals.get(current, 0))) if current else 100
+        pct = max(0, min(100, bars.get(key, 0))) if current else 100
         p.append(f'<text x="{pad}" y="{y + 14}" class="tr">{esc(key)}'
                  f'<tspan class="m" dx="8">{esc(label)}</tspan></text>')
         p.append(f'<text x="{W - pad}" y="{y + 14}" class="cnt" text-anchor="end">{round(pct)}%</text>')
@@ -119,8 +170,11 @@ def main():
     if "--today" in sys.argv:
         today = dt.date.fromisoformat(sys.argv[sys.argv.index("--today") + 1])
     data = json.loads((REPO / "progress.json").read_text(encoding="utf-8"))
-    (REPO / "progress.svg").write_text(build_svg(data, today), encoding="utf-8")
-    print("progress.svg updated")
+    current = next((lv for lv in LEVELS if not data["exams"].get(lv)), None)
+    bars = skill_bars(current, parse_topics(), parse_log(), today) if current else {}
+    (REPO / "progress.svg").write_text(build_svg(data, bars, today), encoding="utf-8")
+    shown = ", ".join(f"{k} {round(v)}%" for k, v in bars.items())
+    print(f"progress.svg updated: {current or 'all levels passed'}" + (f" ({shown})" if shown else ""))
 
 
 if __name__ == "__main__":
