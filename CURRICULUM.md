@@ -1,82 +1,92 @@
 # Curriculum
 
-Goal: B1 German by **27 July 2027**, ready for the Goethe-Zertifikat B1 (all four modules: Lesen, Hören, Schreiben, Sprechen).
-Start: Monday 19 October 2026, assuming a complete beginner (A0).
-Time: about 1 hour a day, including vocabulary. From zero to B1 in ~40 weeks is tight, so consistency matters more than long sessions.
+German is my second foreign language, mainly for a master's in Germany. It's a steady side project, not a priority.
+
+Goal: somewhere between A2 and B1 by **27 July 2027**.
+Start: Monday 19 October 2026, as a complete beginner (A0).
+Time: 10–15 minutes a day during the academic year, then a summer push.
+
+At this pace, A2 by late July is realistic. Getting close to B1 depends on how hard the summer push goes.
 
 ## Phases
 
-| Phase | Weeks | Dates | Level |
+| Phase | Dates | Daily time | Level |
 |---|---|---|---|
-| 1 | 1–12 | 19 Oct – 10 Jan | A1 |
-| 2 | 13–26 | 11 Jan – 18 Apr | A2 |
-| 3 | 27–36 | 19 Apr – 27 Jun | B1 |
-| 4 | 37–41 | 28 Jun – 27 Jul | B1 exam prep |
+| 1 | 19 Oct – 28 Mar | 10–15 min | A1 |
+| 2 | 29 Mar – end of Q4 exams | 10–15 min | A2 (first half) |
+| 3: summer push | end of Q4 exams – 27 Jul | 45–60 min | finish A2, start B1 |
 
 ### Grammar by phase
 
-- **A1:** pronunciation, sein/haben, present tense (regular and irregular), word order (verb second, questions), articles and gender, nominative/accusative, nicht/kein, modal verbs, separable verbs, possessives, basic dative, Perfekt (intro), numbers, time, dates.
-- **A2:** Perfekt in full, dative, two-way prepositions, comparative/superlative, weil/dass/wenn clauses, reflexive verbs, Präteritum of sein/haben/modals, imperative, future with werden, polite Konjunktiv II (würde/hätte/wäre), adjective endings (intro).
-- **B1:** adjective declension in full, relative clauses, Präteritum, passive, Konjunktiv II (wishes, hypotheticals), zu + infinitive, um…zu/damit, two-part connectors (entweder/oder, weder/noch, sowohl/als auch), Plusquamperfekt, genitive, n-declension, verbs with prepositions (da-/wo- forms).
-- **Exam prep:** no new grammar. Timed practice tests, writing emails and forum posts, the Sprechen tasks (planning something together, short presentation).
+- **A1:** pronunciation, sein/haben, present tense (regular and irregular), word order (verb second, questions), articles and gender, nominative/accusative, nicht/kein, modal verbs, separable verbs, possessives, numbers, time, dates.
+- **A2 (first half):** Perfekt, dative, two-way prepositions, weil/dass/wenn clauses, comparative/superlative.
+- **Summer push:** reflexive verbs, Präteritum of sein/haben/modals, polite Konjunktiv II (würde/hätte/wäre), adjective endings, then a B1 preview: relative clauses and zu + infinitive.
 
 ### Vocabulary themes
 
 - **A1:** self, family, food, shopping, time, city, home.
-- **A2:** work, travel, health, housing, free time, appointments.
-- **B1:** study and university life, jobs, media, environment, giving opinions.
+- **A2:** study and university life, work, travel, housing, free time, appointments.
 
 ## Materials
 
 | What | Used for | Link |
 |---|---|---|
-| DW Learn German, *Nicos Weg* | Main course spine (A1–B1), listening, story | https://learngerman.dw.com |
-| Goethe-Institut word lists | Official vocabulary for each level, source for Anki cards | https://www.goethe.de (A1/A2/B1 exam pages) |
-| Goethe B1 practice tests | Mock exams in phase 4 | https://www.goethe.de/de/spr/prf/ueb/pb1.html |
-| Easy German (YouTube) | Real spoken German, from A2 | https://www.youtube.com/@EasyGerman |
-| Anki | Daily vocabulary review, about 10 new words a day | https://apps.ankiweb.net |
-| Lingolia | Grammar lookups when stuck | https://deutsch.lingolia.com |
+| DW Learn German, *Nicos Weg* | Main course spine, short episodes for listening | https://learngerman.dw.com |
+| Goethe-Institut word lists | Official vocabulary per level, source for Anki cards | https://www.goethe.de (A1/A2 exam pages) |
+| Goethe practice tests | A1 and A2 checkpoints | https://www.goethe.de |
+| Anki | Daily vocabulary, 5 new words a day | https://apps.ankiweb.net |
+| Easy German (YouTube) | Real spoken German, optional, from A2 | https://www.youtube.com/@EasyGerman |
 
 ## How it is taught
 
 Claude teaches. No apps besides Anki.
 
+### A normal day (10–15 min)
+
+1. About 5 minutes of Anki.
+2. About 5–10 minutes on the day's exercise.
+
 ### Weekly mix
 
 | Day | Focus |
 |---|---|
-| Mon | New grammar topic, with theory |
-| Tue | Vocabulary and reading |
-| Wed | Writing |
-| Thu | Listening (DW or Easy German clip) |
-| Fri | Grammar practice and short writing |
-| Sat | Review of older material (active recall) |
-| Sun | Speaking: voice chat with Claude |
+| Mon | New grammar point, with short theory |
+| Tue | Vocabulary and a short reading |
+| Wed | Writing 3–5 sentences |
+| Thu | Listening: one Nicos Weg episode |
+| Fri | Grammar practice |
+| Sat | Review of older material |
+| Sun | Speaking: 10-minute voice chat with Claude |
 
 ### Daily exercise
 
 - One file per day in `exercises/`, named `YYYY-MM-DD.md`.
-- Each file has: the goal, a short theory section (only when the topic is new), the tasks, and an empty answer section.
+- Each exercise must fit in 5–10 minutes. Small and focused, one point per day.
+- Each file has the goal, a short theory section (only when the topic is new), the tasks, and an empty answer section.
 - I write my answers in the file and push.
 - Claude checks the answers in the file: marks each error, gives the corrected version, and a one-line reason. Repeated mistakes go into `mistakes.md`.
-- Instructions language: English in A1, mixed in A2, German only from B1.
-- During TU/e exam weeks, exercises are shorter.
+- Instructions are in English during A1, then mixed English and German.
+- During TU/e exam weeks: Anki plus a 5-minute exercise only.
 
 ### Review
 
 - Every Saturday reviews earlier material.
-- Every 4th week, one exercise mixes topics from weeks or months earlier.
+- Every 4th week, the review mixes topics from weeks or months earlier.
 
 ### Speaking
 
-- Sunday voice chat on a topic set in that week's files.
-- Claude speaks slowly at A1 and gets faster over time.
+- Sunday voice chat on a topic from that week.
+- Claude speaks slowly at first and speeds up over time.
 - No corrections mid-sentence. The main 2–3 mistakes come at the end.
+
+### Summer push
+
+- 45–60 minutes a day: longer exercises, more listening, two speaking sessions a week.
+- Covers the rest of A2 and a first look at B1 grammar.
 
 ## Checkpoints
 
-- **End of week 12:** Goethe A1 practice test.
-- **End of week 26:** Goethe A2 practice test.
-- **Weeks 37–41:** one full B1 practice test each week, timed. Target 60%+ in every module, as the real exam requires.
+- **End of March:** Goethe A1 practice test.
+- **Late July:** Goethe A2 practice test. Target 60%+ in each part.
 
-If a checkpoint goes badly, the next phase starts later and the plan is adjusted here.
+If a checkpoint goes badly, the next phase shifts and the plan is updated here.
