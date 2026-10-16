@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 412" width="880" height="412" role="img" aria-label="German progress: working toward A1, 0 of 3 level exams passed">
+<style>
+svg{--bg:#fcfcfb;--ink:#0b0b0b;--ink2:#52514e;--mut:#898781;--line:#e1e0d9;--tile:#f4f3f0;--c0:#2a78d6;--c0b:#9ec1ea;--c0t:#dfeaf6;--c1:#eb6834;--c1b:#f4b9a1;--c1t:#fae7df;--c2:#1baf7a;--c2b:#97d9c1;--c2t:#dcf1e9;--c3:#eda100;--c3b:#f5d38a;--c3t:#faefd8;}
+@media (prefers-color-scheme: dark){svg{--bg:#1a1a19;--ink:#f0efec;--ink2:#c3c2b7;--mut:#898781;--line:#2c2c2a;--tile:#232322;--c0:#3987e5;--c0b:#2d5e97;--c0t:#1f2d3c;--c1:#d95926;--c1b:#904121;--c1t:#3a251b;--c2:#199e70;--c2b:#196c4f;--c2t:#1a3028;--c3:#c98500;--c3b:#865c0a;--c3t:#382c15;}}
+text{font-family:system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;fill:var(--ink)}
+.h{font-size:17px;font-weight:650}.m{font-size:12px;fill:var(--mut)}.lv{font-size:12px;font-weight:600;fill:var(--ink2)}
+.tl{font-size:12px;fill:var(--ink2)}.tv{font-size:26px;font-weight:650}.tu{font-size:12.5px;fill:var(--ink2)}
+.tr{font-size:14px;font-weight:600}.cnt{font-size:13px;fill:var(--ink2)}
+</style>
+<rect width="880" height="412" rx="12" fill="var(--bg)" stroke="var(--line)"/>
+<text x="24" y="36" class="h">Progress</text>
+<text x="856" y="36" class="m" text-anchor="end">Starts Sat 31 Oct 2026 · updated Fri 16 Oct 2026</text>
+<rect x="24.0" y="54" width="199.0" height="76" rx="8" fill="var(--tile)"/>
+<text x="38.0" y="76" class="tl">Working toward</text>
+<text x="38.0" y="113" class="tv">A1<tspan class="tu" dx="6"></tspan></text>
+<rect x="235.0" y="54" width="199.0" height="76" rx="8" fill="var(--tile)"/>
+<text x="249.0" y="76" class="tl">Level exams passed</text>
+<text x="249.0" y="113" class="tv">0<tspan class="tu" dx="6">of 3</tspan></text>
+<rect x="446.0" y="54" width="199.0" height="76" rx="8" fill="var(--tile)"/>
+<text x="460.0" y="76" class="tl">Words in Anki</text>
+<text x="460.0" y="113" class="tv">0<tspan class="tu" dx="6">words</tspan></text>
+<rect x="657.0" y="54" width="199.0" height="76" rx="8" fill="var(--tile)"/>
+<text x="671.0" y="76" class="tl">Days to goal</text>
+<text x="671.0" y="113" class="tv">284<tspan class="tu" dx="6">27 Jul 2027</tspan></text>
+<rect x="24" y="147" width="10" height="10" rx="2" fill="var(--c0)"/>
+<text x="39" y="156" class="m">level exam passed</text>
+<rect x="152" y="147" width="10" height="10" rx="2" fill="var(--c0b)"/>
+<text x="167" y="156" class="m">progress toward the level exam (100% = ready)</text>
+<text x="24.0" y="184" class="lv">A1</text>
+<text x="304.0" y="184" class="lv">A2</text>
+<text x="584.0" y="184" class="lv">B1</text>
+<text x="24" y="210" class="tr">Lesen<tspan class="m" dx="8">Reading</tspan></text>
+<text x="856" y="210" class="cnt" text-anchor="end">A1: 0%</text>
+<rect x="24.0" y="220" width="272.0" height="10" rx="4" fill="var(--c0t)"/>
+<rect x="304.0" y="220" width="272.0" height="10" rx="4" fill="var(--c0t)"/>
+<rect x="584.0" y="220" width="272.0" height="10" rx="4" fill="var(--c0t)"/>
+<text x="24" y="262" class="tr">Hören<tspan class="m" dx="8">Listening</tspan></text>
+<text x="856" y="262" class="cnt" text-anchor="end">A1: 0%</text>
+<rect x="24.0" y="272" width="272.0" height="10" rx="4" fill="var(--c1t)"/>
+<rect x="304.0" y="272" width="272.0" height="10" rx="4" fill="var(--c1t)"/>
+<rect x="584.0" y="272" width="272.0" height="10" rx="4" fill="var(--c1t)"/>
+<text x="24" y="314" class="tr">Schreiben<tspan class="m" dx="8">Writing</tspan></text>
+<text x="856" y="314" class="cnt" text-anchor="end">A1: 0%</text>
+<rect x="24.0" y="324" width="272.0" height="10" rx="4" fill="var(--c2t)"/>
+<rect x="304.0" y="324" width="272.0" height="10" rx="4" fill="var(--c2t)"/>
+<rect x="584.0" y="324" width="272.0" height="10" rx="4" fill="var(--c2t)"/>
+<text x="24" y="366" class="tr">Sprechen<tspan class="m" dx="8">Speaking</tspan></text>
+<text x="856" y="366" class="cnt" text-anchor="end">A1: 0%</text>
+<rect x="24.0" y="376" width="272.0" height="10" rx="4" fill="var(--c3t)"/>
+<rect x="304.0" y="376" width="272.0" height="10" rx="4" fill="var(--c3t)"/>
+<rect x="584.0" y="376" width="272.0" height="10" rx="4" fill="var(--c3t)"/>
+</svg>

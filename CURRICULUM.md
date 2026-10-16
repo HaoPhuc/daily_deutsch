@@ -96,10 +96,7 @@ During TU/e exam periods: weekdays are Anki only, weekends drop to about 30 minu
 
 There's an exam for each level: A1, A2, B1. Claude sets it when it judges I'm ready, not on a fixed date.
 
-**Ready means:**
-- All grammar for the level has been covered.
-- Recent exercises are mostly correct, around 80%.
-- Most of the level's word list is in Anki.
+**Ready means:** all four skill bars for the level are at 100% (see Progress below), and most of the level's word list is in Anki.
 
 **The exam:**
 - It follows the Goethe-Zertifikat format: Lesen, Hören, Schreiben, Sprechen. The Sprechen part is done in a voice chat.
@@ -112,3 +109,22 @@ There's an exam for each level: A1, A2, B1. Claude sets it when it judges I'm re
 - **Fail:** 2–3 weeks of targeted review on the weak parts, then a retake.
 
 **Target dates** (a guide only, readiness decides): A1 by end of January, A2 by end of May, B1 by late July.
+
+## Progress
+
+The README shows a panel with one bar per skill: Lesen, Hören, Schreiben, Sprechen. Each bar has three parts, A1, A2 and B1. Each part shows how close I am to that level's exam in that skill.
+
+**How a skill's percentage is set**, for the current level:
+- 50% comes from coverage: the share of the level's topics practised in that skill.
+- 50% comes from accuracy: my average score in that skill over the last 4 weeks, counted against 80% (80% or better gives the full 50).
+- So 100% means everything is covered and I'm scoring 80%+.
+
+**Where the scores come from:**
+- Lesen and Hören come from the reading and listening tasks.
+- Schreiben comes from the writing tasks.
+- Sprechen comes from the Sunday voice chats, where Claude scores each one.
+
+**Updating:**
+- Claude updates `progress.json` when checking exercises, at least every Sunday.
+- Then Claude runs `python3 tools/progress.py` to redraw `progress.svg`. Never edit the SVG by hand.
+- A passed level exam turns that level's part fully solid in all four bars.
