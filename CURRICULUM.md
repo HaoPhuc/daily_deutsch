@@ -112,7 +112,7 @@ There's an exam for each level: A1, A2, B1. Claude sets it when it judges I'm re
 
 ## Progress
 
-The README shows a panel with one bar per skill: Lesen, Hören, Schreiben, Sprechen. Each bar has three parts, A1, A2 and B1. Each part shows how close I am to that level's exam in that skill.
+The README shows a panel with one bar per skill: Lesen, Hören, Schreiben, Sprechen. Each full bar covers only the current level: A0 → A1 first. After the A1 exam is passed, all four bars reset to A1 → A2, then to A2 → B1.
 
 **How a skill's percentage is set**, for the current level:
 - 50% comes from coverage: the share of the level's topics practised in that skill.
@@ -127,4 +127,4 @@ The README shows a panel with one bar per skill: Lesen, Hören, Schreiben, Sprec
 **Updating:**
 - Claude updates `progress.json` when checking exercises, at least every Sunday.
 - Then Claude runs `python3 tools/progress.py` to redraw `progress.svg`. Never edit the SVG by hand.
-- A passed level exam turns that level's part fully solid in all four bars.
+- After a passed level exam, Claude records it in `progress.json` and the bars switch to the next level.

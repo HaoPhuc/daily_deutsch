@@ -58,7 +58,7 @@ def build_svg(data, today):
         week = (today - start).days // 7 + 1
         when = f"Week {week} · updated {today.strftime('%a %-d %b %Y')}"
 
-    head_y, top_rows, row_h = 184, 196, 52
+    span_y, top_rows, row_h = 158, 174, 52
     H = top_rows + row_h * len(SKILLS) + 8
 
     light = "".join(f"--c{i}:{c};--c{i}b:{tint(c, .45)};--c{i}t:{tint(c, .14)};"
@@ -89,39 +89,27 @@ def build_svg(data, today):
         p.append(f'<text x="{x + 14:.1f}" y="113" class="tv">{esc(value)}'
                  f'<tspan class="tu" dx="6">{esc(unit)}</tspan></text>')
 
-    ly = 156
-    p.append(f'<rect x="{pad}" y="{ly - 9}" width="10" height="10" rx="2" fill="var(--c0)"/>')
-    p.append(f'<text x="{pad + 15}" y="{ly}" class="m">level exam passed</text>')
-    p.append(f'<rect x="{pad + 128}" y="{ly - 9}" width="10" height="10" rx="2" fill="var(--c0b)"/>')
-    p.append(f'<text x="{pad + 143}" y="{ly}" class="m">progress toward the level exam (100% = ready)</text>')
+    # one full-width bar per skill, covering only the current level
+    # (A0 -> A1 until the A1 exam is passed, then A1 -> A2, then A2 -> B1)
+    prev = LEVELS[LEVELS.index(current) - 1] if current and current != LEVELS[0] else "A0"
+    span = f"{prev} → {current}" if current else "B1 reached"
+    p.append(f'<text x="{pad}" y="{span_y}" class="lv">{esc(span)}</text>')
+    p.append(f'<text x="{W - pad}" y="{span_y}" class="m" text-anchor="end">'
+             f'{"100% in all four = ready for the " + current + " exam" if current else "all level exams passed"}</text>')
 
-    # three segments per bar, one per level
-    sgap = 8
     bw = W - 2 * pad
-    sw = (bw - sgap * (len(LEVELS) - 1)) / len(LEVELS)
-    for j, lv in enumerate(LEVELS):
-        sx = pad + j * (sw + sgap)
-        mark = " ✓" if lv in passed else ""
-        p.append(f'<text x="{sx:.1f}" y="{head_y}" class="lv">{lv}{mark}</text>')
-
     for i, (key, label, _, _) in enumerate(SKILLS):
         y = top_rows + i * row_h
         vals = data["skills"][key]
+        pct = max(0, min(100, vals.get(current, 0))) if current else 100
         p.append(f'<text x="{pad}" y="{y + 14}" class="tr">{esc(key)}'
                  f'<tspan class="m" dx="8">{esc(label)}</tspan></text>')
-        right = f"{current}: {round(vals.get(current, 0))}%" if current else "all levels passed"
-        p.append(f'<text x="{W - pad}" y="{y + 14}" class="cnt" text-anchor="end">{esc(right)}</text>')
+        p.append(f'<text x="{W - pad}" y="{y + 14}" class="cnt" text-anchor="end">{round(pct)}%</text>')
         by = y + 24
-        for j, lv in enumerate(LEVELS):
-            sx = pad + j * (sw + sgap)
-            p.append(f'<rect x="{sx:.1f}" y="{by}" width="{sw:.1f}" height="10" rx="4" fill="var(--c{i}t)"/>')
-            if lv in passed:
-                p.append(f'<rect x="{sx:.1f}" y="{by}" width="{sw:.1f}" height="10" rx="4" fill="var(--c{i})"/>')
-            else:
-                pct = max(0, min(100, vals.get(lv, 0)))
-                if pct:
-                    p.append(f'<rect x="{sx:.1f}" y="{by}" width="{max(sw * pct / 100, 6):.1f}" height="10" '
-                             f'rx="4" fill="var(--c{i}b)"/>')
+        p.append(f'<rect x="{pad}" y="{by}" width="{bw}" height="10" rx="4" fill="var(--c{i}t)"/>')
+        if pct:
+            p.append(f'<rect x="{pad}" y="{by}" width="{max(bw * pct / 100, 6):.1f}" height="10" '
+                     f'rx="4" fill="var(--c{i})"/>')
     p.append("</svg>")
     return "\n".join(p)
 
