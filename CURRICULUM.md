@@ -92,10 +92,23 @@ During TU/e exam periods: weekdays are Anki only, weekends drop to about 30 minu
 - 45–60 minutes on weekdays, weekends unchanged.
 - Two speaking sessions a week, plus timed practice-test sections.
 
-## Checkpoints
+## Level exams
 
-- **End of January:** Goethe A1 practice test.
-- **End of May:** Goethe A2 practice test.
-- **Late July:** Goethe B1 practice test. Target 60%+ in each part.
+There's an exam for each level: A1, A2, B1. Claude sets it when it judges I'm ready, not on a fixed date.
 
-If a checkpoint goes badly, the next phase shifts and the plan is updated here.
+**Ready means:**
+- All grammar for the level has been covered.
+- Recent exercises are mostly correct, around 80%.
+- Most of the level's word list is in Anki.
+
+**The exam:**
+- It follows the Goethe-Zertifikat format: Lesen, Hören, Schreiben, Sprechen. The Sprechen part is done in a voice chat.
+- It's built from the official Goethe practice tests where possible.
+- It goes in `exams/`, for example `exams/A1.md`, and is done on a weekend.
+- To pass, I need 60%+ in each part, the same as the real exam.
+
+**After the exam:**
+- **Pass:** move on to the next level.
+- **Fail:** 2–3 weeks of targeted review on the weak parts, then a retake.
+
+**Target dates** (a guide only, readiness decides): A1 by end of January, A2 by end of May, B1 by late July.
