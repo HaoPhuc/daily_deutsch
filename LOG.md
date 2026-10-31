@@ -3,3 +3,4 @@ One row per exercise. Topic IDs refer to the files in `topics/`. Skill scores ar
 
 | Date | Day | Topics | Exercise | Lesen | Hören | Schreiben | Sprechen | Status |
 |------|-----|--------|----------|-------|-------|-----------|----------|--------|
+| 2026-10-31 | Sat | A1-G01, A1-W01 | Pronunciation, alphabet, greetings; Nicos Weg A1 L1 | | | | — | open |

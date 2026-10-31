@@ -9,7 +9,7 @@ text{font-family:system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;f
 </style>
 <rect width="880" height="390" rx="12" fill="var(--bg)" stroke="var(--line)"/>
 <text x="24" y="36" class="h">Progress</text>
-<text x="856" y="36" class="m" text-anchor="end">Starts Sat 31 Oct 2026 · updated Fri 16 Oct 2026</text>
+<text x="856" y="36" class="m" text-anchor="end">Week 1 · updated Sat 31 Oct 2026</text>
 <rect x="24.0" y="54" width="199.0" height="76" rx="8" fill="var(--tile)"/>
 <text x="38.0" y="76" class="tl">Working toward</text>
 <text x="38.0" y="113" class="tv">A1<tspan class="tu" dx="6"></tspan></text>
@@ -21,7 +21,7 @@ text{font-family:system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;f
 <text x="460.0" y="113" class="tv">0<tspan class="tu" dx="6">words</tspan></text>
 <rect x="657.0" y="54" width="199.0" height="76" rx="8" fill="var(--tile)"/>
 <text x="671.0" y="76" class="tl">Days to goal</text>
-<text x="671.0" y="113" class="tv">284<tspan class="tu" dx="6">27 Jul 2027</tspan></text>
+<text x="671.0" y="113" class="tv">269<tspan class="tu" dx="6">27 Jul 2027</tspan></text>
 <text x="24" y="158" class="lv">A0 → A1</text>
 <text x="856" y="158" class="m" text-anchor="end">100% in all four = ready for the A1 exam</text>
 <text x="24" y="188" class="tr">Lesen<tspan class="m" dx="8">Reading</tspan></text>
