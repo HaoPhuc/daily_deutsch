@@ -7,3 +7,4 @@ One row per exercise. Topic IDs refer to the files in `topics/`. Skill scores ar
 | 2026-11-01 | Sun | A1-G01, A1-W01 | Speaking, Nicos Weg F1 listening, profile reading, review | | | — | | open |
 | 2026-11-07 | Sat | A1-G02, A1-W01 | Personal pronouns and sein; Nicos Weg A1 L2 | | | | — | open |
 | 2026-11-08 | Sun | A1-G02, A1-W01 | Speaking (introducing people), Nicos Weg F4 listening, sie/Sie reading, review | | | — | | open |
+| 2026-11-09 | Mon | A1-G02, A1-W01 | Pronoun + sein drill, yes/no questions, error fixing | — | — | | — | open |
